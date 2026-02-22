@@ -33,26 +33,7 @@ def check_root():
 
 def run_cmd(cmd, check=True, capture=False, env=None):
     return subprocess.run(cmd, shell=True, check=check, capture_output=capture, text=True, env=env)
-
-
-def colorful_logo():
-    logos = ["magenta", "bright_magenta", "cyan", "blue", "green", "yellow"]
-    style = choice(logos)
-    logo_lines = r"""
-   ▄█    █▄       ▄████████  ▄████████    ▄█   ▄█▄  ▄█  ███▄▄▄▄      ▄██████▄           ███      ▄██████▄   ▄██████▄   ▄█       
-  ███    ███     ███    ███ ███    ███   ███ ▄███▀ ███  ███▀▀▀██▄   ███    ███      ▀█████████▄ ███    ███ ███    ███ ███       
-  ███    ███     ███    ███ ███    █▀    ███▐██▀   ███▌ ███   ███   ███    █▀          ▀███▀▀██ ███    ███ ███    ███ ███       
- ▄███▄▄▄▄███▄▄   ███    ███ ███         ▄█████▀    ███▌ ███   ███  ▄███                 ███   ▀ ███    ███ ███    ███ ███       
-▀▀███▀▀▀▀███▀  ▀███████████ ███        ▀▀█████▄    ███▌ ███   ███ ▀▀███ ████▄           ███     ███    ███ ███    ███ ███       
-  ███    ███     ███    ███ ███    █▄    ███▐██▄   ███  ███   ███   ███    ███          ███     ███    ███ ███    ███ ███       
-  ███    ███     ███    ███ ███    ███   ███ ▀███▄ ███  ███   ███   ███    ███          ███     ███    ███ ███    ███ ███▌    ▄ 
-  ███    █▀      ███    █▀  ████████▀    ███   ▀█▀ █▀    ▀█   █▀    ████████▀          ▄████▀    ▀██████▀   ▀██████▀  █████▄▄██ 
-                                         ▀                                                                            ▀                   
-"""
-    panel = Panel(Text(logo_lines, style=style), box=box.DOUBLE, border_style=style)
-    console.print(panel)
-    console.print(f"[bold {style}]https://github.com/Z4nzu/hackingtool[/bold {style}]\n")
-
+    
 
 def choose_distro():
     console.print(Panel("[bold magenta]Select installation target[/bold magenta]\n\n[1] Kali / Parrot (apt)\n[2] Arch (pacman)\n[0] Exit", border_style="bright_magenta"))
